@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="colour_selection">
+        <th>Select your favourite colour:-</th><br>
+        <tr>
+            <input type="radio" name='colour' value="re"> Red <br>
+            <input type="radio" name='colour' value="blu"> blue <br>
+            <input type="radio" name='colour' value="gr"> green <br>
+            <input type="radio" name='colour' value="bl"> black <br>
+        </tr>
+        <tr>
+            <input type="button" value="Favourite_colour" onclick="fav_colour()">
+        </tr>
+    </form>
+
+    <script>
+        function fav_colour()
+        {
+            console.log("fav_colour()");
+
+            let clr = document.colour_selection.colour.value;
+            console.log(clr);
+            if(clr == 're')
+            {
+                document.write("<font color = 'red'>red</font> colour");
+            }
+            if(clr == 'blu')
+            {
+                document.write("<font color = 'blue'>blue</font> colour");
+            }
+            if(clr == 'gr')
+            {
+                document.write("<font color = 'green'>green</font> colour");
+            }
+            if(clr == 'bl')
+            {
+                document.write("<font color = 'black'>black</font> colour");
+            }
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f">
+        <table>
+            <tr>
+                <td>
+                    enter name :- <input type="text" name="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="name" onclick="get_name()">
+                </td>
+            </tr>
+        </table>
+        <p id="value"></p>
+    </form>
+    <script>
+        function get_name()
+        {
+            let x = document.f.name.value;
+            document.getElementById('value').innerHTML = "your name is "+x; 
+            
+
+        }
+    </script>
+</body>
+</html>
