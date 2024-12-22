@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f">
+        Enter the nationality :- 
+        <select name="na" id="">
+            <option value="in">India</option>
+            <option value="uk">Uk</option>
+            <option value="us">Usa</option>
+            <option value="ca">Canada</option>
+        </select>
+        <br>
+        <input type="button" value="submit" onclick="Nationality()">
+    </form>
+    <p id="msg"></p>
+    <script>
+        function Nationality()
+        {
+            let msg =" ";
+            let x = document.f.na.value;
+            
+            if(x == 'in')
+            {
+                document.getElementById('msg').innerHTML = "your nationality is India";
+            }
+            if(x == 'uk')
+            {
+                document.getElementById('msg').innerHTML = "your nationality is Uk";
+            }
+            if(x == 'us')
+            {
+                document.getElementById('msg').innerHTML = "your nationality is Usa";
+            }
+            if(x == 'ca')
+            {
+                document.getElementById('msg').innerHTML = "your nationality is Canada";
+            }
+        }
+    </script>
+</body>
+</html>
