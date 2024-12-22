@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="f">
+        <h1>Contact Details</h1>
+        <table border="1px">
+            <tr>
+                <td>First Name *:- </td>
+                <td><input type="text" name="Fname"></td>
+            </tr>
+            <tr>
+                <td>Last Name *:- </td>
+                <td><input type="text" name="Lname"></td>
+            </tr>
+            <tr>
+                <td>Street Address :- </td>
+                <td><input type="textarea" width="30px" height="20px" name="Address"></td>
+            </tr>
+            <tr>
+                <td>Town/city:- </td>
+                <td><input type="text" name="Town"></td>
+            </tr>
+            <tr>
+                <td>Post/Zipcode :- </td>
+                <td><input type="text" name="Zipcode"></td>
+            </tr>
+            <tr>
+                <td>Telephone :- </td>
+                <td><input type="tel" name="Telephone"></td>
+            </tr>
+            <tr>
+                <td>Mobile :- </td>
+                <td><input type="tel" name="Mobile"></td>
+            </tr>
+            <tr>
+                <td>Email:- * </td>
+                <td><input type="email" required name="Email"></td>
+            </tr>
+
+        </table>
+        <tr>
+            <td>Field Marked With * Is Required</td>
+        </tr>
+        <tr>
+            <td><input type="button" value="submit" onclick="details()"></td>
+        </tr>
+    </form>
+    <p id="msg"></p>
+    <script>
+        function details() {
+            let Fname = document.f.Fname.value;
+            let Lname = document.f.Lname.value;
+            let Address = document.f.Address.value;
+            let Town = document.f.Town.value;
+            let Zipcode = document.f.Zipcode.value;
+            let Telephone = document.f.Telephone.value;
+            let Mobile = document.f.Mobile.value;
+            let Email = document.f.Email.value;
+
+            console.log(Fname)
+            console.log(Lname)
+            document.getElementById('msg').innerHTML = "<br>First Name :- " + Fname + " <br> Lastname :- " + Lname + "<br> StreetAddress :-" + Address + "<br>Town/City :- " + Town +"<br>Postal/Zipcode :- " + Zipcode + "<br>Telephone :- " + Telephone + "<br>Mobile :- " + Mobile + "<br>Email :- " + Email;
+
+        }
+    </script>
+</body>
+
+</html>
