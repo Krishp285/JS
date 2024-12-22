@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="f">
+        <tr>
+        Addition<input type="checkbox" name= "calc"value="add"> 
+        Subtraction<input type="checkbox" name= "calc"value="sub">
+        Multiplication<input type="checkbox" name= "calc"value="mul">
+        Division<input type="checkbox" name= "calc"value="div">
+        </tr>
+        <br>
+        <tr>
+        <td>Enter no1 :- <input type="text" name="no1"></td>
+        <td>Enter no2 :- <input type="text" name="no2"></td>
+        </tr>
+        <tr>
+            <input type="button" value="Calculate" onclick="calculate()">
+        </tr>
+    </form>
+    <p id="msg"></p>
+    <script>
+        function calculate() 
+        {
+            console.log(document.f.calc.length)
+            let msg = "";
+            let val = "";
+
+            for(let i=0;i<document.f.calc.length;i++)
+            {
+                if(document.f.calc[i].checked)
+                {
+                    val = document.f.calc[i].value;
+                    console.log(val);
+
+                    if(val == "add")
+                    {
+                            let n1 = parseInt(document.f.no1.value);
+                            let n2 = parseInt(document.f.no2.value);
+
+                            let ans1 = n1 + n2;
+
+                              msg += "Addition is :-" + ans1 +"<br>"
+                    }
+                    if(val == "sub")
+                    {
+                            let n1 = parseInt(document.f.no1.value);
+                            let n2 = parseInt(document.f.no2.value);
+
+                            let ans1 = n1 - n2;
+
+                              msg += "Subtraction is :-" + ans1 +"<br>"
+                    }
+                    if(val == "mul")
+                    {
+                            let n1 = parseInt(document.f.no1.value);
+                            let n2 = parseInt(document.f.no2.value);
+
+                            let ans1 = n1 * n2;
+
+                              msg += "Multiplication is :-" + ans1 +"<br>"
+                    }
+                    if(val == "div")
+                    {
+                            let n1 = parseInt(document.f.no1.value);
+                            let n2 = parseInt(document.f.no2.value);
+
+                            let ans1 = n1 / n2;
+
+                              msg += "Division is :-" + ans1 +"<br>"
+                    }
+                }
+            }
+            document.getElementById('msg').innerHTML = msg
+        }
+    </script>
+</body>
+
+</html>

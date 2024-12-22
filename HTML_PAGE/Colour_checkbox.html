@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="f">
+        <table>
+            <tr>
+                <td>blue<input type="checkbox" name="colour" value="bl"></td>
+                <td>red<input type="checkbox" name="colour" value="re"></td>
+                <td>green<input type="checkbox" name="colour" value="gr"></td>
+                <td>yellow<input type="checkbox" name="colour" value="ye"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="Fav_Colour" onclick="FavColour()"></td>
+            </tr>
+        </table>
+    </form>
+    <p id="msg"></p>
+    <script>
+        function FavColour() 
+        {
+            console.log(document.f.colour.length)
+            let msg = "Your fav Color(s) : "
+            let val = ""
+            for (let i = 0; i < document.f.colour.length; i++)
+            {
+                if (document.f.colour[i].checked)
+                {
+                    val = document.f.colour[i].value;
+                    console.log(val);
+
+
+                    if (val == "bl") 
+                    {
+
+                        msg += "Blue" + " "
+
+                    }
+                    if (val == "re") 
+                    {
+
+                        msg += "Red" + " "
+
+                    }
+                    if (val == "gr") 
+                    {
+
+                        msg += "Green" + " "
+
+                    }
+                    if (val == "ye") 
+                    {
+
+                        msg += "Yellow" + " "
+
+                    }
+                }
+            }
+            document.getElementById('msg').innerHTML = msg
+        }
+    </script>
+</body>
+
+</html>
