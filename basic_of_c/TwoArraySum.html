@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f">
+        <table>
+            <tr>
+            <td>
+                enter value1 :- <input type="text" name="val1">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                enter value2 :- <input type="text" name="val2">
+            </td>
+        </tr>
+           <tr>
+            <td>
+                <input type="button" value="array push1" onclick="pusharray1()">
+                <input type="button" value="array push2" onclick="pusharray2()">
+                <input type="button" value="array sum" onclick="add()">
+            </td>
+        </tr>
+        </table>
+    </form>
+    <p id="array1"></p>
+    <p id="array2"></p>
+    <p id="sumarray"></p>
+    <script>
+        let arr1 = [];
+        let arr2 = [];
+        let arr3 = [];
+        function pusharray1()
+        {   
+       
+            let arrvalue1 = parseInt(document.f.val1.value);
+            console.log(arrvalue1);
+            arr1.push(arrvalue1);
+            printarray1()
+        }
+        function pusharray2()
+        {   
+       
+            let arrvalue2 = parseInt(document.f.val2.value);
+            console.log(arrvalue2);
+            arr2.push(arrvalue2);
+            printarray2()
+        }
+        function printarray1()
+        {
+            document.getElementById('array1').innerHTML = arr1
+        }
+        function printarray2()
+        {
+            document.getElementById('array2').innerHTML = arr2
+        }
+        let sum = 0;
+        let i =0;
+        function add()
+        {
+            for(i = 0;i<arr1.length;i++)
+            {
+                sum = arr1[i] + arr2[i];
+                arr3.push(sum);
+                printsumarray()
+            }
+            
+        }
+        function printsumarray()
+        {
+            document.getElementById('sumarray').innerHTML = arr3
+        }
+        </script>
+</body>
+</html>

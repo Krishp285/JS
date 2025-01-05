@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f">
+        <table>
+            <td>
+                enter value :- <input type="text" name="val">
+            </td>
+            <td>
+                <input type="button" value="array push" onclick="pusharray()">
+                <input type="button" value="array sum" onclick="add()">
+            </td>
+        </table>
+    </form>
+    <p id="msg"></p>
+    <p id="sumarray"></p>
+    <script>
+        let arr = [];
+        function pusharray()
+        {   
+       
+            let arrvalue = parseInt(document.f.val.value);
+            console.log(arrvalue);
+            arr.push(arrvalue);
+            printarray()
+        }
+        function printarray()
+        {
+            document.getElementById('msg').innerHTML = arr 
+        }
+        let sum= 0
+        function add()
+        {
+            for(let i = 0;i<arr.length;i++)
+            {
+                sum = sum + arr[i];
+            }
+            printsumarray()
+        }
+        function printsumarray()
+        {
+            document.getElementById('sumarray').innerHTML = sum 
+        }
+    </script>
+
+</body>
+</html>

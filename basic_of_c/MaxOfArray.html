@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f">
+        <table>
+            <td>
+                enter value :- <input type="text" name="val">
+            </td>
+            <td>
+                <input type="button" value="array push" onclick="pusharray()">
+                <input type="button" value="array sum" onclick="max1()">
+            </td>
+        </table>
+    </form>
+    <p id="msg"></p>
+    <p id="maxarray"></p>
+    <script>
+        let arr = [];
+        let max = 0
+        function pusharray()
+        {   
+       
+            let arrvalue = parseInt(document.f.val.value);
+            console.log(arrvalue);
+            arr.push(arrvalue);
+            printarray()
+        }
+        function printarray()
+        {
+            document.getElementById('msg').innerHTML = arr 
+        }
+
+    
+        console.log("---> ",max)
+        
+        function max1()
+        {
+            max= arr[0]
+            console.log("max1",max);
+            for(let i = 1;i<arr.length;i++)
+            {
+                if(max < arr[i])
+                {
+                        console.log(max)
+                        max = arr[i];
+                }
+            }
+            printmaxarray()
+        }
+        function printmaxarray()
+        {
+            document.getElementById('maxarray').innerHTML = max 
+        }
+    </script>
+
+</body>
+</html>
