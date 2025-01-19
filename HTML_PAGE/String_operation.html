@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f">
+        <table>
+            <tr>
+                <td>
+                    Enter string:- 
+                </td>
+                <td>
+                    <input type="text" name="str">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter starting number:- 
+                </td>
+                <td>
+                    <input type="number" name="no1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter ending number:- 
+                </td>
+                <td>
+                    <input type="number" name="no2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="submit" onclick="substr()">
+                </td>
+            </tr>
+            
+        </table>
+      
+    </form>
+    <p id="msg"></p>
+    <script>
+        function substr()
+        {
+            let string = document.f.str.value
+
+            let start = document.f.no1.value;
+            console.log(typeof(parseInt(start)));
+
+            let end = document.f.no2.value;
+            console.log(typeof(parseInt(end)));
+
+            document.getElementById('msg').innerHTML = string.slice(start,end);
+            document.getElementById('msg').innerHTML = string.substr(start,end);
+          //  document.getElementById('msg').innerHTML = string.length;
+        }
+    </script>
+</body>
+</html>
