@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f">
+        <table>      
+        <tr>
+            <td>
+                Enter string:- 
+            </td>
+            <td>
+                <input type="text" name="str">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Enter string which is to be replace :- 
+            </td>
+            <td>
+                <input type="text" name="strreplace">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Enter replaced string:- 
+            </td>
+            <td>
+                <input type="text" name="replacedstr">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name='Replace' value="re1"> Replace 1 
+                <input type="radio" name='Replace' value="reall"> Replace all
+            </td>
+             
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="Replace the string" onclick="Replacestr()">
+            </td>
+           
+        </tr>
+    </table>
+    </form>
+<p id="msg"></p>
+    <script>
+        function Replacestr()
+        {
+           let x = document.f.str.value;
+           console.log(x);
+
+           let replacestr = document.f.strreplace.value;
+           console.log(replacestr);
+
+
+           let replacedstr = document.f.replacedstr.value;
+           console.log(replacedstr);
+
+           
+            let rpl = document.f.Replace.value;
+            console.log(rpl);
+            if(rpl == 're1')
+            {
+               document.getElementById("msg").innerHTML = x.replace(replacestr,replacedstr);
+            }
+            else
+            {
+                document.getElementById("msg").innerHTML = x.replaceAll(replacestr,replacedstr);
+            }
+           
+            }
+    </script>
+</body>
+</html>
