@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f">
+        <table>
+            <tr>
+                <td>
+                    Enter string:- 
+                </td>
+                <td>
+                    <input type="text" name="str">
+                </td>
+            </tr>
+            <tr> 
+                <td>
+                    Enter index:- 
+                </td>
+                <td>
+                    <input type="number" name="indexofstring">
+                </td>
+            </tr>
+           
+            <tr>
+                <td>
+                    <input type="button" value="submit" onclick="substrindex()">
+                </td>
+            </tr>
+            
+        </table>
+      
+    </form>
+    <p id="msg"></p>
+    <script>
+        function substrindex()
+        {
+            let x = document.f.str.value
+            console.log(x);
+
+            let substringindex = document.f.indexofstring.value
+            console.log(substringindex);
+            
+          console.log(parseInt(x.length -1) -  parseInt(substringindex))
+
+            if(parseInt(x.length - 1 ) -  parseInt(substringindex) >=5)
+            {
+                    document.getElementById('msg').innerHTML =  x.substr(substringindex,5) + " ";
+                            
+            }
+            else
+            {
+                document.getElementById('msg').innerHTML = " not found";
+            }
+        }
+    </script>
+</body>
+</html>

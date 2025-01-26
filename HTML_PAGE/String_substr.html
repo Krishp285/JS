@@ -18,20 +18,13 @@
             </tr>
             <tr>
                 <td>
-                    Enter starting number:- 
+                    Enter sub string:- 
                 </td>
                 <td>
-                    <input type="number" name="no1">
+                    <input type="text" name="substring">
                 </td>
             </tr>
-            <tr>
-                <td>
-                    Enter ending number:- 
-                </td>
-                <td>
-                    <input type="number" name="no2">
-                </td>
-            </tr>
+           
             <tr>
                 <td>
                     <input type="button" value="submit" onclick="substr()">
@@ -45,17 +38,21 @@
     <script>
         function substr()
         {
-            let string = document.f.str.value
+            let x = document.f.str.value
+            console.log(x);
 
-            let start = document.f.no1.value;
-            console.log(typeof(parseInt(start)));
-
-            let end = document.f.no2.value;
-            console.log(typeof(parseInt(end)));
-
-           // document.getElementById('msg').innerHTML = string.slice(start,end);
-            document.getElementById('msg').innerHTML = string.substr(start,end);
-          //  document.getElementById('msg').innerHTML = string.length;
+            let substringval = document.f.substring.value
+            console.log(substringval);
+            
+            console.log(x.includes(substringval))
+            if(x.includes(substringval))
+            {
+                document.getElementById('msg').innerHTML = substringval + " found";
+            }
+            else
+            {
+                document.getElementById('msg').innerHTML = substringval + " not found";
+            }
         }
     </script>
 </body>
