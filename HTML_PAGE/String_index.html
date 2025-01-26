@@ -53,7 +53,15 @@
             }
             else
             {
-                document.getElementById('msg').innerHTML = " not found";
+                if((parseInt(x.length - 1 )) == (parseInt(substringindex)) )
+                {
+                    document.getElementById('msg').innerHTML = "last index enter new index";
+                }
+                else
+                {
+                    document.getElementById('msg').innerHTML = " not sufficient 5 character";
+                }
+               
             }
         }
     </script>
