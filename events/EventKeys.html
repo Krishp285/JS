@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onkeypress="keyPress()">Key Press</button>
+    <button onkeyup="keyup()">Key Up</button>
+    <button onkeydown="keyDown()">Key Down</button>
+    <script>
+        function keyPress(){
+            document.body.style.backgroundColor = 'Brown'
+        }
+        function keyup(){
+            document.body.style.backgroundColor = 'grey'
+        }
+        function keyDown(){
+            document.body.style.backgroundColor = 'slategray'
+        }
+    </script>
+</body>
+</html>
+<!-- 
+    press
+    down
+    up
+
+    -->

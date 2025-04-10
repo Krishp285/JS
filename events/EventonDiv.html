@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 100px;
+        }
+        #box1{
+            width: 200px;
+            height: 200px;
+            border: 5px solid rgb(154, 92, 12);
+            padding: 15px;
+            text-align: justify;
+        }
+
+        #box2{
+            width: 200px;
+            height: 200px;
+            border: 5px solid rgb(154, 92, 12);
+            padding: 15px;
+            text-align: justify;
+        }
+        #box3{
+            width: 200px;
+            height: 200px;
+            border: 5px solid rgb(154, 92, 12);
+            padding: 15px;
+            text-align: justify;
+        }
+        #box4{
+            width: 200px;
+            height: 200px;
+            border: 5px solid rgb(154, 92, 12);
+            padding: 15px;
+            text-align: justify;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class="box">
+    <div id="box1" onmouseover="mouseOver()">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis, quam neque consectetur sint quibusdam hic ipsa atque tempora architecto voluptates, quia veniam velit suscipit repellat voluptatem, eaque inventore ab labore!
+    </div>
+
+    <div id="box2" onmouseenter="mouseenter()">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis, quam neque consectetur sint quibusdam hic ipsa atque tempora architecto voluptates, quia veniam velit suscipit repellat voluptatem, eaque inventore ab labore!
+    </div>
+
+    <div id="box3" onmouseleave ="mouseleave()">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis, quam neque consectetur sint quibusdam hic ipsa atque tempora architecto voluptates, quia veniam velit suscipit repellat voluptatem, eaque inventore ab labore!
+    </div>
+
+    
+    <div id="box4" onmouseclick ="mouseclick()">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis, quam neque consectetur sint quibusdam hic ipsa atque tempora architecto voluptates, quia veniam velit suscipit repellat voluptatem, eaque inventore ab labore!
+    </div>
+
+
+</div>
+    <div id="text">krish patel</div>
+    <button onclick="hiddentext()">hide</button>
+    <button onclick="unhiddentext()">unhide</button>
+
+    <script>
+        function mouseOver(){
+            // document.getElementById('box').innerHTML = "Time pass thai rayo che...."
+           // document.getElementById('box').style.backgroundColor = 'teal'
+            //document.getElementById('box').style.fontSize = '25px'
+            //document.getElementById('box').style.color = 'plum'
+            document.getElementById('box1').innerHTML = ""
+            document.getElementById('box1').style.backgroundImage = "url('https://www.w3schools.com/css/img_5terre.jpg')";
+            
+       
+            document.getElementById('box2').innerHTML = "Time pass chalu che...."
+            document.getElementById('box2').style.backgroundColor = 'black'
+            document.getElementById('box2').style.fontSize = '30px'
+            document.getElementById('box2').style.color = 'white'
+
+          
+            document.getElementById('box3').innerHTML = "Time pass thai rayo che...."
+            document.getElementById('box3').style.backgroundColor = 'blue'
+            document.getElementById('box3').style.fontSize = '30px'
+            document.getElementById('box3').style.color = 'red'
+
+            document.getElementById('box4').innerHTML = "Time pass thai rayo che...."
+            document.getElementById('box4').style.backgroundColor = 'yellow'
+            document.getElementById('box4').style.fontSize = '10px'
+            document.getElementById('box4').style.color = 'purple'
+        }
+
+            function hiddentext(){
+                document.getElementById('text').style.visibility = "hidden" 
+            }
+            function unhiddentext(){
+                document.getElementById('text').style.visibility = "visible" 
+            }
+
+    </script>
+</body>
+</html>

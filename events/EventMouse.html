@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alert('Click')">on Click</button>
+    <button onmouseover="mouseOver()" onmouseout="document.body.bgColor = 'aqua'">Mouse OVer</button>
+    <button onmouseup="mouseUp()">Mouse up</button>
+
+    <script>
+        function mouseOver(){
+            // console.log("Mouse over")
+            document.body.bgColor = 'indianred'
+        }
+
+        function mouseUp(){ 
+            document.body.style.backgroundColor = 'pink'
+            // document.body.bgColor = 'gold'
+        }
+    </script>
+</body>
+</html>
+<!-- 
+    onmousemove
+    onmousedown
+    enter
+    leave
+
+
+-->
+

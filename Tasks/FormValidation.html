@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <form name="f">
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" name="fn">
+                    <span id="errFn"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" name="ln">
+                    <span id="errLn"></span>    
+                </td>
+                
+            </tr>
+            <tr>
+                <td>Contact No</td>
+                <td><input type="text" name="cn">
+                    <span id="errCn"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><input type="radio" name="g" value="m"> Male
+                    <input type="radio" name="g" value="f"> Female
+                    <span id="errGen"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Hobbies</td>
+                <td><input type="checkbox" name="h" value="mu"> Music
+                    <input type="checkbox" name="h" value="dr"> Drawing <br>
+                    <input type="checkbox" name="h" value="sp"> Sports
+                    <input type="checkbox" name="h" value="sp"> Singing
+                    <span id="errhob"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="newpass">
+                    <span id="errNPass"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Confirm Password</td>
+                <td><input type="password" name="confirmpass">
+                    <span id="errCPass"></span>
+                    <span id="errPass"></span>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <td>Enter the nationality :- </td>
+                   <td> <select name="na" id="">
+                    <option value="0">----- Select -----</option>
+                        <option value="in">India</option>
+                        <option value="uk">Uk</option>
+                        <option value="us">Usa</option>
+                        <option value="ca">Canada</option>
+                    </select>
+                    <span id="errNa"></span>
+                </td>
+                   
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="button" onmou onclick="validate()" value="Register"></td>
+            </tr>
+        </table>
+    </form>
+ <script>
+    function validate()
+    {
+            let isErr = false
+            let errMsg = ""
+            let fname = document.f.fn.value
+            let lname = document.f.ln.value
+            let cno = document.f.cn.value
+            let mail = document.f.email.value
+            let newpassword = document.f.newpass.value
+            let confirmpassword = document.f.confirmpass.value
+
+            let textonly = /^[a-zA-Z]+$/
+            let digitonly = /^[0-9]+$/
+            let emailregex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+            if(fname == "" || fname.trim().length == 0){
+              
+                isErr = true
+               
+                document.getElementById("errFn").innerHTML = "<font color='red'>* First Name is Required</font>"
+            }
+            else if(textonly.test(fname) == false)
+            {
+                isErr = true
+               
+               document.getElementById("errFn").innerHTML = "<font color='red'>* First Name Required only text</font>"
+            }
+
+            if(lname == "" || lname.trim().length == 0){
+                
+                isErr = true
+            
+                document.getElementById("errLn").innerHTML = "<font color='red'>* Last Name is Required</font>"
+            }
+            else if(textonly.test(lname) == false)
+            {
+                isErr = true
+               
+               document.getElementById("errFn").innerHTML = "<font color='red'>* Last Name Required only text</font>"
+            }
+
+            if(cno == "" || cno.trim().length == 0 ){
+                
+                isErr = true
+
+                document.getElementById("errCn").innerHTML = "<font color='red'>* contact number is Required</font>"
+            }
+            else if(cno.length !=10)
+            {
+                isErr = true
+
+                document.getElementById("errCn").innerHTML = "<font color='red'>* 10 digits contact number  only</font>"
+            }
+            else if(digitonly.test(cno) == false)
+            {
+                isErr = true
+
+                document.getElementById("errCn").innerHTML = "<font color='red'>* digits only</font>"
+            }
+            
+            if(mail == "" || mail.trim().length == 0)
+            {
+                isErr = true
+
+                document.getElementById("errCn").innerHTML = "<font color='red'>* email is required</font>"
+            }
+            else if(emailregex.test(mail) == false)
+            {
+                isErr = true
+               
+               document.getElementById("errFn").innerHTML = "<font color='red'>* Invalid email </font>"
+            }
+            let cnt = 0
+            let cnt1 = 0
+            let gen = ""
+            let hobbies = ""
+            let national = ""
+            for(let i=0;i<document.f.g.length;i++)
+            {
+                if(document.f.g[i].checked)
+                {
+                    cnt++;
+                    gen=document.f.g[i].value
+                    
+                }
+            }
+            if(cnt==0)
+            {
+                isErr = true
+                document.getElementById("errGen").innerHTML = "<font color='red'>* gender is Required</font>"
+            }
+
+
+
+            for(let i=0;i<document.f.h.length;i++)
+            {
+                if(document.f.h[i].checked)
+                {
+                    cnt1++;
+                    hobbies=document.f.h[i].value
+                }
+            }
+            if(cnt1==0)
+            {
+                isErr = true
+                document.getElementById('errhob').innerHTML = "<font color='red'>* Hobbies is Required</font>"
+            }
+
+            let na=document.f.na.value
+
+            if(na=='0')
+            {
+                isErr = true
+                document.getElementById('errNa').innerHTML = "<font color='red'>* Nationality is Required</font>"
+           
+            }
+
+            if(newpassword== "" || newpassword.trim().length == 0)
+            {
+                isErr = true
+                document.getElementById('errNPass').innerHTML = "<font color='red'>* New Password is required</font>"
+            
+            }
+            if(confirmpassword== "" || confirmpassword.trim().length == 0)
+            {
+                isErr = true
+                document.getElementById('errCPass').innerHTML = "<font color='red'>* confirm Password is required</font>"
+            
+            }
+            if(newpassword != confirmpassword)
+            {
+                isErr = true
+                document.getElementById('errPass').innerHTML = "<font color='red'>* Password is mismatched</font>"
+            
+            }
+    
+            
+           
+    }   
+
+ </script>
+</body>
+</html>

@@ -1,75 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact Details Form</title>
+    <style>
+        .error { 
+            color: red; 
+            font-size: 12px; 
+            margin-left: 5px; 
+        }
+        td { 
+            vertical-align: top; 
+            padding: 5px; 
+        }
+        #msg { 
+            margin-top: 20px; 
+            padding: 10px; 
+            border-radius: 5px; 
+        }
+        .success { 
+            background-color: #dff0d8; 
+            color: #3c763d; 
+            border: 1px solid #d6e9c6; 
+        }
+    </style>
 </head>
-
 <body>
     <form name="f">
         <h1>Contact Details</h1>
         <table border="1px">
             <tr>
                 <td>First Name *:- </td>
-                <td><input type="text" name="Fname"></td>
+                <td>
+                    <input type="text" name="Fname">
+                    <span class="error" id="FnameError"></span>
+                </td>
             </tr>
             <tr>
                 <td>Last Name *:- </td>
-                <td><input type="text" name="Lname"></td>
+                <td>
+                    <input type="text" name="Lname">
+                    <span class="error" id="LnameError"></span>
+                </td>
             </tr>
             <tr>
                 <td>Address:-</td>
-               <td><textarea name="Address" rows="4" cols="50"></textarea></td>
+                <td>
+                    <textarea name="Address" rows="4" cols="50"></textarea>
+                    <span class="error" id="AddressError"></span>
+                </td>
             </tr>
             <tr>
                 <td>Town/city:- </td>
-                <td><input type="text" name="Town"></td>
+                <td>
+                    <input type="text" name="Town">
+                    <span class="error" id="TownError"></span>
+                </td>
             </tr>
             <tr>
                 <td>Post/Zipcode :- </td>
-                <td><input type="text" name="Zipcode"></td>
+                <td>
+                    <input type="text" name="Zipcode">
+                    <span class="error" id="ZipcodeError"></span>
+                </td>
             </tr>
             <tr>
                 <td>Telephone :- </td>
-                <td><input type="tel" name="Telephone"></td>
+                <td>
+                    <input type="tel" name="Telephone">
+                    <span class="error" id="TelephoneError"></span>
+                </td>
             </tr>
             <tr>
                 <td>Mobile :- </td>
-                <td><input type="tel" name="Mobile"></td>
+                <td>
+                    <input type="tel" name="Mobile">
+                    <span class="error" id="MobileError"></span>
+                </td>
             </tr>
             <tr>
                 <td>Email:- * </td>
-                <td><input type="email" required name="Email"></td>
+                <td>
+                    <input type="email" name="Email">
+                    <span class="error" id="EmailError"></span>
+                </td>
             </tr>
-
+            <tr>
+                <td colspan="2">Fields marked with * are required</td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" value="Submit" onclick="details()"></td>
+            </tr>
         </table>
-        <tr>
-            <td>Field Marked With * Is Required</td>
-        </tr>
-        <tr>
-            <td><input type="button" value="submit" onclick="details()"></td>
-        </tr>
     </form>
-    <p id="msg"></p>
+    <div id="msg"></div>
     <script>
         function details() {
-            let Fname = document.f.Fname.value;
-            let Lname = document.f.Lname.value;
-            let Address = document.f.Address.value;
-            let Town = document.f.Town.value;
-            let Zipcode = document.f.Zipcode.value;
-            let Telephone = document.f.Telephone.value;
-            let Mobile = document.f.Mobile.value;
-            let Email = document.f.Email.value;
+            // Reset all messages
+            document.querySelectorAll('.error').forEach(span => span.textContent = '');
+            const msgBox = document.getElementById('msg');
+            msgBox.className = '';
+            msgBox.innerHTML = '';
 
-            console.log(Fname)
-            console.log(Lname)
-            document.getElementById('msg').innerHTML = "<br>First Name :- " + Fname + " <br> Lastname :- " + Lname + "<br> StreetAddress :-" + Address + "<br>Town/City :- " + Town +"<br>Postal/Zipcode :- " + Zipcode + "<br>Telephone :- " + Telephone + "<br>Mobile :- " + Mobile + "<br>Email :- " + Email;
+            // Get form values
+            const Fname = document.f.Fname.value.trim();
+            const Lname = document.f.Lname.value.trim();
+            const Address = document.f.Address.value.trim();
+            const Town = document.f.Town.value.trim();
+            const Zipcode = document.f.Zipcode.value.trim();
+            const Telephone = document.f.Telephone.value.trim();
+            const Mobile = document.f.Mobile.value.trim();
+            const Email = document.f.Email.value.trim();
 
+            // Regex patterns
+            const nameRegex = /^[A-Za-z\s-]{2,}$/;
+            const zipRegex = /^\d{6}([-\s]?\d{4})?$/;
+            const addressRegex = /^.{10,}$/;
+            const mobileRegex = /^\d{10}$/;
+            const phoneRegex = /^\+?[1-9]\d{1,14}$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Validation object to store results
+            const validation = {
+                isValid: true,
+                errors: {}
+            };
+
+            // Validate all fields first
+            if (!Fname) {
+                validation.isValid = false;
+                validation.errors.Fname = 'First name is required';
+            } else if (!nameRegex.test(Fname)) {
+                validation.isValid = false;
+                validation.errors.Fname = 'Use letters only, minimum 2 characters';
+            }
+
+            if (!Lname) {
+                validation.isValid = false;
+                validation.errors.Lname = 'Last name is required';
+            } else if (!nameRegex.test(Lname)) {
+                validation.isValid = false;
+                validation.errors.Lname = 'Use letters only, minimum 2 characters';
+            }
+
+            if (Address && !addressRegex.test(Address)) {
+                validation.isValid = false;
+                validation.errors.Address = 'Address must be at least 10 characters long';
+            }
+
+            if (Town && !nameRegex.test(Town)) {
+                validation.isValid = false;
+                validation.errors.Town = 'Use letters only';
+            }
+
+            if (Zipcode && !zipRegex.test(Zipcode)) {
+                validation.isValid = false;
+                validation.errors.Zipcode = 'Must be a valid postal/zip code';
+            }
+
+            if (Telephone && !phoneRegex.test(Telephone)) {
+                validation.isValid = false;
+                validation.errors.Telephone = 'Enter valid phone number';
+            }
+
+            if (Mobile && !mobileRegex.test(Mobile)) {
+                validation.isValid = false;
+                validation.errors.Mobile = 'Must be exactly 10 digits';
+            }
+
+            if (!Email) {
+                validation.isValid = false;
+                validation.errors.Email = 'Email is required';
+            } else if (!emailRegex.test(Email)) {
+                validation.isValid = false;
+                validation.errors.Email = 'Enter a valid email address';
+            }
+
+            // Display results
+            if (!validation.isValid) {
+                // Display all errors inline
+                if (validation.errors.Fname) {
+                    document.getElementById('FnameError').textContent = validation.errors.Fname;
+                }
+                if (validation.errors.Lname) {
+                    document.getElementById('LnameError').textContent = validation.errors.Lname;
+                }
+                if (validation.errors.Address) {
+                    document.getElementById('AddressError').textContent = validation.errors.Address;
+                }
+                if (validation.errors.Town) {
+                    document.getElementById('TownError').textContent = validation.errors.Town;
+                }
+                if (validation.errors.Zipcode) {
+                    document.getElementById('ZipcodeError').textContent = validation.errors.Zipcode;
+                }
+                if (validation.errors.Telephone) {
+                    document.getElementById('TelephoneError').textContent = validation.errors.Telephone;
+                }
+                if (validation.errors.Mobile) {
+                    document.getElementById('MobileError').textContent = validation.errors.Mobile;
+                }
+                if (validation.errors.Email) {
+                    document.getElementById('EmailError').textContent = validation.errors.Email;
+                }
+            } else {
+                // Display success message
+                msgBox.className = 'success';
+                msgBox.innerHTML = `
+                    <h3>Submission Successful!</h3>
+                    <p>Thank you for submitting your contact details:</p>
+                    <ul>
+                        <li><strong>First Name:</strong> ${Fname}</li>
+                        <li><strong>Last Name:</strong> ${Lname}</li>
+                        ${Address ? `<li><strong>Address:</strong> ${Address}</li>` : ''}
+                        ${Town ? `<li><strong>Town/City:</strong> ${Town}</li>` : ''}
+                        ${Zipcode ? `<li><strong>ZIP Code:</strong> ${Zipcode}</li>` : ''}
+                        ${Telephone ? `<li><strong>Telephone:</strong> ${Telephone}</li>` : ''}
+                        ${Mobile ? `<li><strong>Mobile:</strong> ${Mobile}</li>` : ''}
+                        <li><strong>Email:</strong> ${Email}</li>
+                    </ul>
+                `;
+            }
         }
     </script>
 </body>
-
 </html>
