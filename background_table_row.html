@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="bgclr()">
+    <table width="100%" height="100%">
+        <tr id="row1" style="background-color:pink;  height: 100px;"><td></td></tr>
+        <tr id="row2" style="background-color:green;  height: 100px;"><td></td></tr>
+        <tr id="row3" style="background-color:red;  height: 100px;"><td></td></tr>
+        <tr id="row4" style="background-color:yellow;  height: 100px;"><td></td></tr>
+        <tr id="row5" style="background-color:purple;  height: 100px;"><td></td></tr>
+        <tr id="row6" style="background-color:orange;  height: 100px;"><td></td></tr>
+        <tr id="row7" style="background-color:lightblue;  height: 100px;"><td></td></tr>
+        <tr id="row8" style="background-color:lightgreen;  height: 100px;"><td></td></tr>
+        <tr id="row9" style="background-color:lightyellow;  height: 100px;"><td></td></tr>
+        <tr id="row10" style="background-color:lightpink;  height: 100px;"><td></td></tr>
+       
+    </table>
+    <script>
+      
+        function blue() {
+            document.getElementById("row2").style.backgroundColor = "blue";
+            document.getElementById("row1").style.backgroundColor = "pink";
+            setTimeout(green,1000)
+        }
+        function green() {
+            document.getElementById("row3").style.backgroundColor = "violet";
+            document.getElementById("row2").style.backgroundColor = "green";
+            setTimeout(red,1000)
+        }
+        function red() {
+            document.getElementById("row4").style.backgroundColor = "lightgrey";
+            document.getElementById("row3").style.backgroundColor = "red";
+            setTimeout(yellow,1000)
+        }
+        function yellow() {
+            document.getElementById("row5").style.backgroundColor = "lightblue";
+            document.getElementById("row4").style.backgroundColor = "yellow";
+            setTimeout(purple,1000)
+        }
+        function purple() {
+            document.getElementById("row6").style.backgroundColor = "darkblue";
+            document.getElementById("row5").style.backgroundColor = "purple";
+            setTimeout(orange,1000)
+        }
+        function orange() {
+            document.getElementById("row7").style.backgroundColor = "darkorchid";
+            document.getElementById("row6").style.backgroundColor = "orange";
+            setTimeout(lightblue,1000)
+        }
+        function lightblue() {
+            document.getElementById("row8").style.backgroundColor = "darkcyan";
+            document.getElementById("row7").style.backgroundColor = "lightblue";
+            setTimeout(lightgreen,1000)
+        }
+        function lightgreen() {
+            document.getElementById("row9").style.backgroundColor = "darkseagreen";
+            document.getElementById("row8").style.backgroundColor = "lightgreen";
+            setTimeout(lightyellow,1000)
+        }
+        function lightyellow() {
+            document.getElementById("row10").style.backgroundColor = "darkkhaki";
+            document.getElementById("row9").style.backgroundColor = "lightyellow";
+            setTimeout(bgclr,1000)
+        }
+        function bgclr() 
+        {
+            document.getElementById("row1").style.backgroundColor = "black";
+            document.getElementById("row10").style.backgroundColor = "black";
+            setTimeout(blue,1000)
+        }
+        
+    </script>
+
+</body>
+</html>

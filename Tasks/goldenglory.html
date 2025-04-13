@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>golden glory</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    .navbar{
+        background-color: #49afd4;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+
+    }
+    a {
+        color:black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 40px;
+        font-weight: bold ;
+    }
+    .colour_button {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+    .colour_button button {
+        
+        background-color: lightblue;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+ 
+
+.taj-mahal{
+   
+    background-color: white;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: justify;
+    width: 80%;
+    margin-top: 20px;
+}
+</style>
+<body style="background-color: rgb(37, 150, 190)">
+    <div class="navbar">
+        <span><img src="https://www.pngall.com/wp-content/uploads/8/The-Seven-Wonders-of-World-PNG-Free-Download.png" alt="" height="150px" width="300px"></span>
+        <a href="index.html">Home</a>
+        <a href="#">destination</a>
+        <a href="goldenquest.html">news</a>
+        <a href="goldenbattle.html">history</a>
+        <a href="goldenquest.html">contact us</a>
+        <a href="goldenquest.html">logout</a>
+    
+    </div>
+
+    <div class="colour_button">
+        <button style="background-color: white; color: black; padding: 10px 20px; border: none; cursor: pointer; " onclick="blackandwhite()">black and white</button>
+        <button style="background-color: white; color: black; padding: 10px 20px; border: none; cursor: pointer;" onclick="desert()">desert</button>
+        <button style="background-color: white; color: black; padding: 10px 20px; border: none; cursor: pointer;" onclick="greenforest()">green forest</button>
+        <button style="background-color: white; color: black; padding: 10px 20px; border: none; cursor: pointer;" onclick="reset()">reset</button>
+    </div>
+
+    <div class="taj-mahal">
+        <p>The Seven Wonders of the World are extraordinary monuments that represent some of the greatest achievements in architecture, engineering, and art throughout human history. These wonders are celebrated not only for their stunning beauty and grandeur but also for their cultural, historical, and symbolic significance. Chosen from various parts of the globe, they reflect the diversity and richness of human civilization. The list most commonly referred to today is the New Seven Wonders of the World, a selection made through a global poll conducted by the New7Wonders Foundation in 2007.</p>
+
+        <p>The New Seven Wonders of the World:
+            Great Wall of China (China)
+            A massive structure stretching over 13,000 miles, built to protect Chinese states from invasions. It is a symbol of ancient China's strength and determination.
+        </p>
+        <p>    
+            Petra (Jordan)
+            An ancient city carved into pink sandstone cliffs, known for its rock-cut architecture and advanced water system. It was once a thriving trading hub.
+        </p>  
+        <p>  
+            Christ the Redeemer (Brazil)
+            A towering statue of Jesus Christ in Rio de Janeiro, standing 98 feet tall, symbolizing peace and welcoming arms over the city.
+        </p>
+        <p>  
+            Machu Picchu (Peru)
+            A 15th-century Incan citadel set high in the Andes Mountains, known for its sophisticated dry-stone construction and breathtaking natural scenery.
+        </p>
+        <p>    
+            Chichen Itza (Mexico)
+            A large pre-Columbian archaeological site built by the Maya civilization, featuring the iconic El Castillo pyramid used for astronomical and ceremonial purposes.
+        </p>
+        <p>    
+            Roman Colosseum (Italy)
+            An ancient amphitheater in Rome, capable of holding 50,000 spectators, where gladiator games and public spectacles were held in the Roman Empire.
+        </p>
+        <p>    
+            Taj Mahal (India)
+            A magnificent white marble mausoleum built by Emperor Shah Jahan in memory of his wife Mumtaz Mahal, known worldwide for its exquisite beauty and love story.</p>
+        </p>
+        </div>
+
+    <script>
+        function blackandwhite() 
+        {
+            document.body.style.backgroundColor = "black";
+            document.querySelector('.taj-mahal').style.backgroundColor = "#262e35";
+            document.querySelector('.taj-mahal').style.color = "white";
+            document.querySelector('.navbar').style.backgroundColor = "#262e35";
+
+            for(let i=0; i<document.querySelectorAll('a').length; i++){
+                document.querySelectorAll('a')[i].style.color = "white";
+            }
+        }
+        function desert() 
+        {
+            document.body.style.backgroundColor = "#ae9b5a";
+            document.querySelector('.taj-mahal').style.backgroundColor = "#eae1c1";
+            document.querySelector('.taj-mahal').style.color = "black";
+            document.querySelector('.navbar').style.backgroundColor = "#eae1c1";
+
+            for(let i=0; i<document.querySelectorAll('a').length; i++){
+                document.querySelectorAll('a')[i].style.color = "black";
+            }
+        }
+        function greenforest() 
+        {
+            document.body.style.backgroundColor = "#4caf50";
+            document.querySelector('.taj-mahal').style.backgroundColor = "#a5d6a7";
+            document.querySelector('.taj-mahal').style.color = "black";
+            document.querySelector('.navbar').style.backgroundColor = "#a5d6a7";
+
+            for(let i=0; i<document.querySelectorAll('a').length; i++){
+                document.querySelectorAll('a')[i].style.color = "black";
+            }
+        }
+        function reset() 
+        {
+            document.body.style.backgroundColor = "rgb(37, 150, 190)";
+            document.querySelector('.taj-mahal').style.backgroundColor = "white";
+            document.querySelector('.taj-mahal').style.color = "black";
+            document.querySelector('.navbar').style.backgroundColor = "#49afd4";
+
+            for(let i=0; i<document.querySelectorAll('a').length; i++){
+                document.querySelectorAll('a')[i].style.color = "black";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Red Box</title>
+  <style>
+    #box {
+      background-color: red;
+      
+    }
+  </style>
+</head>
+<body>
+
+  Enter Height : <input type="number" id="height"><br>
+  Enter Width : <input type="number" id="width" ><br>
+  <button onclick="createBox()">Create Box</button>
+
+  <div id="box"></div>
+
+  <script>
+    function createBox() {
+      const height = document.getElementById("height").value;
+      const width = document.getElementById("width").value;
+      const box = document.getElementById("box");
+
+      box.style.height = height + "px";
+      box.style.width = width + "px";
+    }
+  </script>
+
+</body>
+</html>

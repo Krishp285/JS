@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="bgclr()">
+
+    <script>
+        function bgclr() {
+            document.body.style.backgroundColor = "lightblue";
+            setTimeout(red,1000)
+        }
+
+        function red()
+        {
+            document.body.style.backgroundColor = "red";
+            setTimeout(green,1000)
+        }
+        function green()
+        {
+            document.body.style.backgroundColor = "green";
+            setTimeout(blue,1000)
+        }
+        function blue()
+        {
+            document.body.style.backgroundColor = "blue";
+            setTimeout(black,1000)
+        }   
+        function black()
+        {
+            document.body.style.backgroundColor = "black";
+            setTimeout(white,1000)
+        }
+        function white()
+        {
+            document.body.style.backgroundColor = "white";
+            setTimeout(purple,1000)
+        }
+        function purple()
+        {
+            document.body.style.backgroundColor = "purple";
+            setTimeout(bgclr,1000)
+        }
+
+        </script>
+
+        
+        <script>
+            var colors = ["lightblue", "red", "green", "blue", "black", "white", "purple"];
+            var i = 0;
+            function bgclr() {
+                document.body.style.backgroundColor = colors[i];
+                i++;
+                if (i >= colors.length) {
+                    i = 0;
+                }
+                setTimeout(bgclr, 1000);
+            }
+        </script>
+    
+</body>
+</html>
