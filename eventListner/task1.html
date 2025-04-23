@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container{
+        width: 100%;
+        height: 500px;
+        background-color: orange;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 100px;
+        color: white;
+        font-size: 60px;
+        font-weight: bold;
+
+    }
+   #btn{
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    </style>
+<body>
+
+    <h1>remove event listner</h1>
+    <div id="container">
+        <p>this div has a mouseover event listner that displays a random number every time you move your mouse inside this orange field click button to remove the div's event listner
+         </p>   
+            <button id="btn" onclick="removeEvent()">Remove Event</button>
+    </div>
+    <div id="random_number"></div>
+<script>
+    const random_number = document.getElementById('random_number');
+    
+    document.getElementById('container').addEventListener('mouseover', randomno);
+    function randomno(){
+        let randomNum = Math.floor(Math.random() * 1000);
+        random_number.innerHTML = randomNum;
+
+    }
+    function removeEvent(){
+        console.log("remove event listner");
+        document.getElementById('container').removeEventListener('mouseover', randomno);
+        
+    }
+
+   
+</script>
+    
+</body>
+</html>

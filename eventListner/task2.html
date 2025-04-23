@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container{
+        background-color: black;
+        width: 100%;
+        height: 1000px;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 100px;
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+    }
+    button{
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: green;
+        color: white;
+    }
+    </style>
+<body>
+    <div id="container">
+        <h1>vote for your favourite programming language</h1>
+        <button onclick="vote('javascript')">Javascript</button>
+        <button onclick="vote('python')">Python</button>
+        <button onclick="vote('java')">Java</button>
+        <button onclick="vote('c++')">C++</button>
+    
+
+    <div>Javascript :<span id="js">0</span> vote(s)</div>
+    <div>Python :<span id="py">0</span> vote(s)</div>
+    <div>Java :<span id="java">0</span> vote(s)</div>
+    <div>C++ :<span id="cplus">0</span> vote(s)</div> 
+ 
+</div>
+    
+    
+   
+
+    <script>
+        let python = 0;
+        let javascript = 0;
+        let java = 0;
+        let cplus = 0;
+       function vote(language)
+       {
+        if(language == 'python')
+       {
+        
+        python += 1;
+        document.getElementById('py').innerHTML = python
+       }
+         else if(language == 'javascript')
+         {
+            
+            javascript += 1;
+            document.getElementById('js').innerHTML = javascript
+         }
+         else if(language == 'java')
+         {
+          
+            java += 1;
+            document.getElementById('java').innerHTML = java
+         }
+         else if(language == 'c++')
+         {
+           
+            cplus += 1;
+            document.getElementById('cplus').innerHTML = cplus
+         }
+        }
+        
+      
+    </Script>
+</body>
+</html>
