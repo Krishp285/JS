@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>InstaClone</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #333;
+    }
+    h2 {
+      font-size: 20px;
+      color: #666;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      cursor: pointer;
+    
+    }
+    .fa-heart
+    {
+        top: 50%;
+        color: red;
+    }
+    .heart {
+      background-image: url('https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg');
+       position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1000px;
+      height: 1000px;
+        background-size: cover;
+    }
+    .heart .fa-heart
+    {
+        position: absolute;
+        transform: translate(-50%, -50%) scale(0);
+        font-size: 50px;
+        animation: grow 0.6s linear;
+    }
+    @keyframes grow {
+      to {
+        transform:translate(-50%,-50%) scale(10);
+        opacity: 0;
+      }
+    
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>double click on image to </h1><h1> like</h1>
+    <h2>you liked it 0 times</h2>
+  </div>
+
+  <div class="heart"></div>
+
+  <script>
+    const hrt = document.querySelector('.heart');
+    const times = document.querySelector('#times');
+    let clicktime = 0;
+    let timescLicked = 0;
+
+    hrt.addEventListener('dblclick', (e) => {
+        const heart = document.createElement('i');
+        heart.classList.add('fa');
+        heart.classList.add('fa-heart');
+
+        hrt.appendChild(heart);
+
+        times.innerHTML = ++timescLicked + ' times';
+
+    });
+
+
+    
+
+
+
+    
+
+
+
+
+   
+
+  </script>
+</body>
+</html>

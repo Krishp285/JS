@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+    }
+    form {
+        margin-bottom: 20px;
+    }
+    input[type="text"] {
+        padding: 10px;
+        width: 200px;
+        margin-right: 10px;
+    }
+    button {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #218838;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    li {
+        background-color: #e9ecef;
+        margin: 5px 0;
+        padding: 10px;
+    }
+    li:nth-child(odd) {
+        background-color: #dfe2e6;
+    }
+    li:nth-child(even) {
+        background-color: #ced4da;
+    }
+    li:hover {
+        background-color: #adb5bd;
+        cursor: pointer;
+    }
+    li:active {
+        background-color: #6c757d;
+        color: white;
+    }
+    li:focus {
+        outline: 2px solid #495057;
+    }
+    input:focus {
+        outline: 2px solid #495057;
+    }
+    input:required:invalid {
+        border-color: red;
+    }
+    input:required:valid {
+        border-color: green;
+    }
+    input::placeholder {
+        color: #6c757d;
+    }
+    input:focus::placeholder {
+        color: #495057;
+    }
+    input:focus {
+        border-color: #495057;
+        box-shadow: 0 0 5px rgba(73, 80, 87, 0.5);
+    }
+    button:focus {
+        outline: 2px solid #495057;
+    }
+    button:disabled {
+        background-color: #6c757d;
+        cursor: not-allowed;
+    }
+    button:disabled:hover {
+        background-color: #6c757d;
+    }
+    button:disabled:focus {
+        outline: none;
+    }
+    ul li {
+        transition: background-color 0.3s ease;
+    }
+    ul li:hover {
+        background-color: #adb5bd;
+    }
+    ul li:active {
+        background-color: #6c757d;
+        color: white;
+    }
+    
+
+</style>
+<body>
+    <form action="" name="f">
+        enter colour :- <input type="text" name="color" placeholder="Enter colour" required>
+       
+
+    </form>
+     <button onclick="appendchilddemo()" >add colour</button>
+
+    <ul id="colorlist">
+        <li>blue</li>
+        <li>green</li>
+        <li>red</li>
+        <li>yellow</li>
+        <li>violet</li>
+    </ul>
+    <script>
+        function appendchilddemo() {
+            
+            let colorInput = document.f.color.value;
+
+            let newcolor = document.createElement('li');
+            let data = document.createTextNode(colorInput);
+            newcolor.appendChild(data);
+            let colorList = document.getElementById('colorlist');
+            colorList.appendChild(newcolor);
+
+        }
+
+    </script>
+    
+</body>
+</html>

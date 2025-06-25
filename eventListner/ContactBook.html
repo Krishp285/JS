@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+    .nav {
+        width: 100%;
+        height: 50px;
+        background-color: #0a1232;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+    input {
+        width: 200px;
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      
+    }
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .submit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .submit button {
+        padding: 10px 20px;
+        background-color: #0a1232;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       
+    }
+    .box
+    {
+        width: 300px;
+        padding: 10px;
+        margin: 10px auto;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        color: #333;
+        
+    }   
+    .box p {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .box:hover {
+        background-color: #f9f9f9;
+        cursor: pointer;
+    }
+    .box:active {
+        background-color: #e0e0e0;
+    }
+    .box:focus {
+        outline: 2px solid #0a1232;
+    }
+    .box:focus-within {
+        outline: 2px solid #0a1232;
+    }
+    .box:focus-within p {
+        color: #0a1232;
+    }
+    .box p:hover {
+        color: #0a1232;
+    }
+    .box p:active {
+        color: #0a1232;
+    }
+    .box p:focus {
+        outline: 2px solid #0a1232;
+    }
+    .box p:focus-within {
+        outline: 2px solid #0a1232;
+    }
+
+
+    .box p:focus-within:hover {
+        color: #0a1232;
+    }
+
+    </style>
+<body>
+    <div class="nav">My Contact Book</div>
+    <div class="button">
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="email" id="email" placeholder="Enter Email">
+    </div>
+    <div class="submit">
+        <button onclick="addContact()" >Add Contact</button>
+    </div>
+
+    
+</body>
+<script>
+    function addContact() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        if (name && email) 
+        {
+            const contactList = document.createElement('div');
+            contactList.classList.add('box')
+            
+            contactList.innerHTML = `<p>Name: ${name}, Email: ${email}</p>`;
+            document.body.appendChild(contactList);
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+        } 
+
+        
+    }
+</script>
+</html>

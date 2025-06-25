@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('https://www.avezano.com/cdn/shop/files/KK1352_210x150_88b6ee06-a689-4d60-80f1-75705eab42aa.jpg?v=1692338186&width=416') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+.container {
+  background-color: rgba(255, 140, 0, 0.8);
+  margin: 80px auto;
+  padding: 20px;
+  width: 70%;
+  border-radius: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.expand-hide-btn {
+  padding: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 50px;
+  border-top: 1px solid #fff;
+  position: relative;
+}
+
+.expand-hide-btn::after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+}
+
+.answer-box {
+  display: none;
+  padding: 0 15px 15px 15px;
+  font-size: 30px;
+}
+
+.answer-box.active {
+  display: block;
+}
+
+.expand-hide-btn.active::after {
+  content: '-';
+}
+</style>
+<body>
+    <div class="container">
+    <h1>Frequently Asked Question</h1>
+
+    <div class="accordion-item">
+      <div class="expand-hide-btn">What is the return policy?</div>
+      <div class="answer-box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet possimus vitae repellendus veniam dolorem magni!
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="expand-hide-btn">What is the return policy?</div>
+      <div class="answer-box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet possimus vitae repellendus veniam dolorem magni!
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="expand-hide-btn">What is the return policy?</div>
+      <div class="answer-box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet possimus vitae repellendus veniam dolorem magni!
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+    const expandHideBtn = document.getElementsByClassName('expand-hide-btn');
+    let answerBox = document.getElementsByClassName('answer-box');
+
+    for (let i = 0; i < expandHideBtn.length; i++) {
+    expandHideBtn[i].addEventListener('click', function () {
+    answerBox[i].classList.toggle('active');
+    });
+}
+
+</script>
+</html>

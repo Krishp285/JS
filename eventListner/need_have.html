@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .Need, .Have {
+            margin-top: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #fff;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        #needList, #haveList {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        #needList li {
+            background-color: #e7f3ff;
+            color: #0056b3;
+        }
+        #haveList li {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .Need button, .Have button {
+            margin: 5px;
+        }
+        #needitemlist, #haveitemlist {
+            font-weight: bold;
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+        }
+        #needitemlist {
+            color: #0056b3;
+        }
+        #haveitemlist {
+            color: #155724;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container form {
+            width: 100%;
+            max-width: 400px;
+        }
+        i {
+            margin-left: 220px;
+            color: #dc3545;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Shopping List</h1>
+    <form action="" name="f">
+       Add Item  <input type="text" id="data" placeholder="What do you need?">
+        
+        <div class="Need">
+            <button type="button" onclick="needbutton()">Need</button>
+        </div>
+        <div class="Have">
+            <button type="button" onclick="havebutton()">Have</button>
+        </div>
+
+    </form>
+
+   <span id="needitemlist">Need</span>
+    <ul id="needList"></ul>
+    <span id="haveitemlist">Have</span>
+    <ul id="haveList"></ul>
+
+
+    <script>
+
+        function needbutton()
+        {
+            let datalist = document.getElementById("data").value;
+            let needInput = document.getElementById("need");
+            let needList = document.getElementById("needList");
+            let li = document.createElement("li");
+            let i = document.createElement("i");
+            i.className = "fa-solid fa-xmark";
+            
+            i.onclick = function() {
+                li.remove();
+            };
+            li.textContent = datalist;
+            needList.appendChild(li);
+             li.appendChild(i);
+
+        }
+        function havebutton()
+        {
+            let datalist = document.getElementById("data").value;
+
+            let haveInput = document.getElementById("have");
+            let haveList = document.getElementById("haveList");
+            let li = document.createElement("li");
+            let i = document.createElement("i");
+            i.className = "fa-solid fa-xmark";
+            i.onclick = function() {
+                li.remove();
+            };
+            li.textContent = datalist;
+            haveList.appendChild(li);
+            li.appendChild(i);
+        }
+
+        
+    </script>
+</body>
+</html>
